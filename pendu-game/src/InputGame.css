@@ -1,0 +1,18 @@
+._me {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    line-height: 40px;
+    font-size: 13pt;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    background: #A9D4E2;
+}
+
+._ds_bp {
+    color: white!important;
+    background-color: #ff0000!important;
+}
