@@ -6,30 +6,36 @@ import "./InputGame.css"
 
 class InputGame extends Component {
 
-    constructor (props) {
+    constructor(props) {
         super()
 
+        this.handleLettersUsed = props.handleLettersUsed
         this.letterUsed = props.letterUsed
-        this.listAtoZ   = 'abcdefghijklmnopqrstuvwxyz'
+        this.listAtoZ = 'abcdefghijklmnopqrstuvwxyz'
     }
 
     genClassLetter(c) {
-        console.log("test" + this.letterUsed)
         if (this.letterUsed.includes(c)) {
             return '_me   _ds_bp'
         }
-
         return '_me'
     }
 
-    render()
-    {
+    tryThisLetter(c) {
+
+        this.letterUsed.push(c);
+        this.handleLettersUsed(this.letterUsed)
+        console.log(c)
+    }
+
+    render() {
         return (
             <center>
                 <div>
                     {this.listAtoZ.split("").map((c, index) =>
                         (
-                            <a href="#" key={index}  title="Essayez la lettre {c}">
+                            <a href="#" key={index} onClick={() => (this.tryThisLetter(c))}
+                               title="Essayez la lettre {c}">
                                 <div className={this.genClassLetter(c)}>{c}</div>
                             </a>
                         ))}
